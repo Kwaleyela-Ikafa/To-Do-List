@@ -1,70 +1,88 @@
 body {
-    background-color: aliceblue;
+  background-color: aliceblue;
 }
 
 section {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .toDo {
-    background-color: white;
-    width: 40%;
-    box-shadow: 0px 2px 8px rgb(0 0 0 / 15%);
+  background-color: white;
+  width: 40%;
+  box-shadow: 0px 2px 8px rgb(0 0 0 / 15%);
 }
 
-.toDo-heading {
-    display: flex;
-    height: 50px;
-    justify-content: space-between;
+.container {
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
 }
 
 .toDo-h1 {
-    color: #545862;
-    font-size: 15px;
-    font-weight: 400;
-    padding: 1rem;
-    line-height: 20px;
-    margin: 0;
-    width: 100%;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+  color: #545862;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 1rem;
+  line-height: 20px;
+  margin: 0;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .svg-img {
-    margin: auto;
-    height: 20px;
-    line-height: 50px;
-    font-size: 18px;
-    opacity: 0.5;
-    width: 46px;
-    color: #333;
-    cursor: pointer;
+  margin: auto;
+  height: 20px;
+  line-height: 50px;
+  font-size: 18px;
+  opacity: 0.5;
+  width: 46px;
+  color: #333;
+  cursor: pointer;
 }
 
 .text-input {
-    width: 100%;
-    padding: 0 40px 0 1rem;
-    line-height: 50px;
-    height: 50px;
-    border: none;
-    font-style: italic;
+  width: 100%;
+  padding: 0 40px 0 1rem;
+  line-height: 50px;
+  height: 50px;
+  border: none;
+  font-style: italic;
 }
 
 .task-form {
-    display: flex;
+  display: flex;
 }
 
 #submit-new-item {
-    border: none;
-    background-color: transparent;
-    z-index: 0;
-    background-image: url(/images/enter.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 40px;
-    height: 50px;
-    cursor: pointer;
-    opacity: 0.5;
+  border: none;
+  background-color: transparent;
+  z-index: 0;
+  background-image: url(/images/enter.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 40px;
+  height: 50px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.list-item {
+  display: flex;
+  gap: 20px;
+}
+
+.clear {
+  border: none;
+  background-color: grey;
+  text-align: center;
+}
+
+.clear-btn {
+  margin: 1rem auto;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
