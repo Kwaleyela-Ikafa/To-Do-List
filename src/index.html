@@ -9,7 +9,7 @@
   <body>
     <section>
       <div class="toDo">
-        <div class="toDo-heading">
+        <div class="container">
             <h1 class="toDo-h1">Today's To Do</h1>
             <svg class="svg-img" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
                 <g>
@@ -21,9 +21,13 @@
             </svg>
         </div>
         <form class="task-form">
-          <input class="text-input" type="text" name="" id="" placeholder="Add to your list">
+          <input class="text-input" type="text" id="list-input" placeholder="Add to your list">
           <input id="submit-new-item" type="submit" tabindex="-1" value="" title="click this or press enter to submit" class="icon-return">
         </form>
+        <ul id="list"></ul>
+        <div class="clear">
+          <button class="clear-btn" type="submit">Clear all completed</button>
+        </div>
       </div>
     </section>
   </body>
