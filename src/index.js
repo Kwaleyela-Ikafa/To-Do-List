@@ -1,5 +1,3 @@
-import '/src/style.css';
-
 const list = [
   {
     index: 0,
@@ -21,7 +19,7 @@ const list = [
 const toDoList = () => {
   const List = document.getElementById('list');
   for (let i = 0; i < list.length; i += 1) {
-    const li = document.createElement("li");
+    const li = document.createElement('li');
     li.classList = 'list-item';
     li.innerHTML = `
       <input type='checkbox'>
