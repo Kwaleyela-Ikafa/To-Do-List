@@ -71,7 +71,9 @@ section {
 
 .list-item {
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
+  margin-right: 15px;
+  margin-left: -25px;
 }
 
 .clear {
@@ -80,7 +82,7 @@ section {
   text-align: center;
 }
 
-.clear-btn {
+#clear-btn {
   margin: 1rem auto;
   border: none;
   background-color: transparent;
