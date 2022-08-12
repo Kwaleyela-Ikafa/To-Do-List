@@ -6,6 +6,14 @@ const addBtn = document.getElementById('submit-new-item');
 const deleteAllBtn = document.getElementById('clear-btn');
 const todoList = document.getElementById("list");
 
+class Task {
+  constructor(index, description, completed = false) {
+    this.index = index;
+    this.description = description;
+    this.completed = completed;
+  }
+}
+
 let listArray = []
 
 
@@ -31,13 +39,12 @@ const showTasks = () => {
   }else{
     listArray = JSON.parse(getLocalStorageData); 
   }
-
   let newLiTag = "";
-  listArray.forEach((element, index) => {
+  listArray.forEach((element) => {
     newLiTag += `
             <li class = 'list-item'>
-            <input id= 'checkbox' type='checkbox'>
-            ${element}<span class="icon"><i class="fas fa-trash"></i></span>
+            <input id= '${Task.index}' class='checkbox' type='checkbox' ${!Task.completed ? '' : 'checked'}>
+            <input id="task" type='text' class=" ${!Task.completed ? '' : 'checked'} " value="${element}" /><span class="icon"><i class="fas fa-trash"></i></span>
             </li>
             `
   });
@@ -65,45 +72,39 @@ deleteAllBtn.onclick = ()=>{
   showTasks(); //call the showTasks function
 }
 
+// refresh the page
 const refresh = document.querySelector('.refresh');
 refresh.addEventListener('click', () => {
   window.location.reload();
 });
 
-showTasks(); //calling showTask function
-// let taskList = [];
+// editing task function.
+const editing = (event) => {
+  if (event.target.type === 'text' && event.key === 'Enter') {
+    const targetedElem = event.target.parentElement.parentElement;
+    listArray.filter((e) => +e.index === +targetedElem.id);
+    listArray[targetedElem.id - 1].element = event.target.value;
+    save(listArray);
+  }
+};
 
-// const toDoList = () => {
-//   if (listInput.value === '') {
-//     alert('Add a task');
-//   } else {
-//     // taskList = localStorage.setItem('list-item', JSON.stringify(taskList));
-//     toDoList.forEach(() => {
-      // const List = document.getElementById('list');
-      // const li = document.createElement('li');
-      // li.classList = 'list-item';
-      // li.innerHTML = `
-      //   <input id= 'checkbox' type='checkbox'>
-      //   <h3 id='item'>${listInput.value}</h3>
-      //   <span>&cross;</span>
-      //   `;
-      // toDoList.appendChild(li);
+todoList.addEventListener('keypress', editing);
 
-//       listInput.value = '';
-//     // });
-//   }
-// };
+// update on changing the checkbock function.
+const updateChanges = (event) => {
+  if (event.target.checked) {
+    event.target.nextElementSibling.classList.add('checked');
+    listArray[event.target.id - 1].completed = true;
+    save(listArray);
+    showTasks();
+  } else {
+    event.target.nextElementSibling.classList.remove('checked');
+    listArray[event.target.id - 1].completed = false;
+    save(listArray);
+    showTasks();
+  }
+};
 
-// addButton.addEventListener('click', toDoList);
+todoList.addEventListener('change', updateChanges);
 
-// listInput.addEventListener('keypress', () => {
-//   if (Event.key === 'Enter') {
-//     toDoList();
-//   }
-// });
-
-// const h3 = document.getElementById('item');
-// const checkbox = document.getElementById('checkbox');
-// checkbox.addEventListener('click', () => {
-//   h3.style.textDecoration = "line-through";
-// });
+showTasks(); 

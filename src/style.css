@@ -88,3 +88,14 @@ section {
   background-color: transparent;
   cursor: pointer;
 }
+
+.checked {
+  width: auto;
+  color: #808080;
+  text-decoration: line-through;
+}
+
+#task {
+  border: none;
+  font-size: 15px;
+}
