@@ -1,5 +1,5 @@
-import './style.css';
 import Task from './modules/task.js';
+import './style.css';
 
 const inputBox = document.getElementById('list-input');
 const addBtn = document.getElementById('submit-new-item');
@@ -68,10 +68,16 @@ const deleteTask = (e) => {
 
 todoList.addEventListener('click', deleteTask);
 
-// delete all tasks function
-deleteAllBtn.onclick = (e) => {
-  listArray.splice(e);
-  localStorage.setItem('List item', JSON.stringify(listArray)); // set the item in localstorage
+deleteAllBtn.onclick = () => {
+  listArray = JSON.parse(localStorage.getItem('List item'));
+  const newArray = listArray.filter((task) => task.completed === false);
+  localStorage.setItem('List item', JSON.stringify(newArray)); // set the item in localstorage
+  const updateTaskList = newArray.map((task, index) => {
+    task.index = index + 1;
+    return task;
+  });
+  save(updateTaskList);
+  listArray = updateTaskList;
   window.location.reload();
 };
 
