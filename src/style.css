@@ -71,7 +71,10 @@ section {
 
 .list-item {
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
+  margin-right: 15px;
+  margin-left: -25px;
+  margin-bottom: 20px;
 }
 
 .clear {
@@ -80,9 +83,20 @@ section {
   text-align: center;
 }
 
-.clear-btn {
+#clear-btn {
   margin: 1rem auto;
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+.checked {
+  width: auto;
+  color: #808080;
+  text-decoration: line-through;
+}
+
+.taskK {
+  border: none;
+  font-size: 15px;
 }
