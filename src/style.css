@@ -96,7 +96,7 @@ section {
   text-decoration: line-through;
 }
 
-#task {
+.taskK {
   border: none;
   font-size: 15px;
 }
