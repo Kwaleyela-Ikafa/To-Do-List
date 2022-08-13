@@ -1,5 +1,5 @@
-import './style.css';
 import Task from './modules/task.js';
+import './style.css';
 
 const inputBox = document.getElementById('list-input');
 const addBtn = document.getElementById('submit-new-item');
