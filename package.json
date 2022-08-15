@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/Kwaleyela-Ikafa/To-Do-List/issues"
   },
-  "homepage": "https://Kwaleyela-Ikafa.github.io/To-Do-List/dist/",
+  "homepage": "https://Kwaleyela-Ikafa.github.io/To-Do-List/",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.1",
