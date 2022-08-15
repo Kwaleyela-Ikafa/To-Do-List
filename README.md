@@ -9,6 +9,10 @@
 - CSS
 - Webpack
 
+## Live demo
+
+[Live website](https://kwaleyela-ikafa.github.io/To-Do-List/)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
