@@ -1,10 +1,17 @@
-import Task from './modules/task.js';
 import './style.css';
 
 const inputBox = document.getElementById('list-input');
 const addBtn = document.getElementById('submit-new-item');
 const deleteAllBtn = document.getElementById('clear-btn');
 const todoList = document.getElementById('list');
+
+class Task {
+  constructor(index, description, completed = false) {
+    this.index = index;
+    this.description = description;
+    this.completed = completed;
+  }
+}
 
 let listArray = [];
 
@@ -83,7 +90,8 @@ deleteAllBtn.onclick = () => {
 
 // editing task function.
 const editing = (e) => {
-  if (e.target.type === 'text' && e.key === 'Enter') {
+  // eslint-disable-next-line eqeqeq
+  if (e.target.type == 'text' && e.key == 'Enter') {
     const targetElem = e.target;
     listArray[targetElem.id - 1].description = e.target.value;
     listArray.filter((e) => +e.index === +targetElem.id);
