@@ -28,7 +28,7 @@ addBtn.addEventListener('click', () => {
 
 const showTasks = () => {
   const getLocalStorageData = localStorage.getItem('List item');
-  if (getLocalStorageData === null) {
+  if (getLocalStorageData == null) {
     listArray = [];
   } else {
     listArray = JSON.parse(getLocalStorageData);
