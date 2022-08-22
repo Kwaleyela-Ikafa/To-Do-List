@@ -1,6 +1,6 @@
 # To-Do-List
 
-> A todo list app that allows users to add, delete, edit, and clear all completed tasks.
+> A simple todo list app that allows users to add, delete, edit, and clear all completed tasks.
 
 ## Built With
 
